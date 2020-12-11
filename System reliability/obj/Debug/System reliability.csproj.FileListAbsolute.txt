@@ -8,3 +8,13 @@ E:\Институт\Надежность информационных систе
 E:\Институт\Надежность информационных систем\Лабораторные работы\Лабораторная работа 6\System reliability\System reliability\obj\Debug\System reliability.csproj.CoreCompileInputs.cache
 E:\Институт\Надежность информационных систем\Лабораторные работы\Лабораторная работа 6\System reliability\System reliability\obj\Debug\System reliability.exe
 E:\Институт\Надежность информационных систем\Лабораторные работы\Лабораторная работа 6\System reliability\System reliability\obj\Debug\System reliability.pdb
+C:\Users\Lena\System-reliability\System-reliability\System reliability\bin\Debug\System reliability.exe.config
+C:\Users\Lena\System-reliability\System-reliability\System reliability\bin\Debug\System reliability.exe
+C:\Users\Lena\System-reliability\System-reliability\System reliability\bin\Debug\System reliability.pdb
+C:\Users\Lena\System-reliability\System-reliability\System reliability\obj\Debug\System reliability.csprojAssemblyReference.cache
+C:\Users\Lena\System-reliability\System-reliability\System reliability\obj\Debug\System_reliability.Form1.resources
+C:\Users\Lena\System-reliability\System-reliability\System reliability\obj\Debug\System_reliability.Properties.Resources.resources
+C:\Users\Lena\System-reliability\System-reliability\System reliability\obj\Debug\System reliability.csproj.GenerateResource.cache
+C:\Users\Lena\System-reliability\System-reliability\System reliability\obj\Debug\System reliability.csproj.CoreCompileInputs.cache
+C:\Users\Lena\System-reliability\System-reliability\System reliability\obj\Debug\System reliability.exe
+C:\Users\Lena\System-reliability\System-reliability\System reliability\obj\Debug\System reliability.pdb
