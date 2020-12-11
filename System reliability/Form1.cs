@@ -75,8 +75,8 @@ namespace System_reliability
             lbRezult.Text = $"Число случаев, соответствующих отказам более 3 элементов: {countOfFreeAndMoreFail.ToString()}";
             //обновление графиков(добавление новой точки) в зависимости от состояний элементов
             for (int i = 0; i < chartModeling.Series.Count; i++)
-            {   
-                if (i != chartModeling.Series.Count-1)
+            {
+                if (i != chartModeling.Series.Count - 1)
                     timeSinceLastFailure[i] += timeUnit;
                 if (!currentSeriesStates[i])
                 {
@@ -106,9 +106,15 @@ namespace System_reliability
         {
             dgStates.Rows.Add();
             dgStates[0, rowIndex - 1].Value = rowIndex;
-            for(int j = 1; j <= currentState.Length; j++)
+            for (int j = 1; j <= currentState.Length; j++)
             {
                 dgStates[j, rowIndex - 1].Value = currentState[j - 1];
+            }
+            if (!currentState[currentState.Length - 1])
+            {
+                DataGridViewCellStyle dataGridViewCellStyle = new DataGridViewCellStyle();
+                dataGridViewCellStyle.BackColor = Color.Yellow;
+                dgStates.Rows[rowIndex - 1].DefaultCellStyle = dataGridViewCellStyle;
             }
         }
 
@@ -122,7 +128,7 @@ namespace System_reliability
         private void CheckOfFail(bool[] currentState)
         {
             int count = 0;
-            for(int i = 0; i < currentState.Length; i++)
+            for (int i = 0; i < currentState.Length; i++)
             {
                 if (!currentState[i])
                     count++;
