@@ -142,6 +142,7 @@ namespace System_reliability
         {
             ClearChart();
             ShowModelingResultsGraphic();
+            buttonPauseContinue.Text = "Пауза";
             buttonPauseContinue.Enabled = true;
         }
 
