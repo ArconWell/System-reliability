@@ -18,7 +18,8 @@ namespace System_reliability
         double[] timeSinceLastFailure;//время, прошедшее с момента последнего отказа у каждого отдельного элемента
         double[] k;
         Modeling modeling = new Modeling();
-
+        int currentCountOfExperiments = 0;//текущее число циклов
+        int countOfFreeAndMoreFail = 0;//текущее число состояний, когда отказало более 3 эл-ов
 
         private void ShowModelingResultsGraphic()
         {
@@ -66,11 +67,15 @@ namespace System_reliability
 
         private void UpdateSeries(Object myObject, EventArgs myEventArgs)
         {
+            currentCountOfExperiments++;
             timePassed += timeUnit;
             currentSeriesStates = modeling.CalculateOnePass(timeSinceLastFailure, currentSeriesStates);
+            OutputOneState(currentSeriesStates, currentCountOfExperiments);
+            CheckOfFail(currentSeriesStates);
+            lbRezult.Text = $"Число случаев, соответствующих отказам более 3 элементов: {countOfFreeAndMoreFail.ToString()}";
             //обновление графиков(добавление новой точки) в зависимости от состояний элементов
             for (int i = 0; i < chartModeling.Series.Count; i++)
-            {
+            {   
                 if (i != chartModeling.Series.Count-1)
                     timeSinceLastFailure[i] += timeUnit;
                 if (!currentSeriesStates[i])
@@ -97,10 +102,33 @@ namespace System_reliability
                 chartModeling.ChartAreas[0].AxisX.ScaleView.Scroll((int)(timePassed / chartModeling.ChartAreas[0].AxisX.ScaleView.Size) * chartModeling.ChartAreas[0].AxisX.ScaleView.Size);//скролл
         }
 
+        private void OutputOneState(bool[] currentState, int rowIndex)
+        {
+            dgStates.Rows.Add();
+            dgStates[0, rowIndex - 1].Value = rowIndex;
+            for(int j = 1; j <= currentState.Length; j++)
+            {
+                dgStates[j, rowIndex - 1].Value = currentState[j - 1];
+            }
+        }
+
         private void UpdateOneSeries(int seriesNumber, double x, double y)
         {
             Series series = chartModeling.Series[seriesNumber];
             series.Points.AddXY(x, y);
+        }
+
+        //подсчёт случаев, когда отказало более 3 эл-ов
+        private void CheckOfFail(bool[] currentState)
+        {
+            int count = 0;
+            for(int i = 0; i < currentState.Length; i++)
+            {
+                if (!currentState[i])
+                    count++;
+            }
+            if (count >= 3)
+                countOfFreeAndMoreFail++;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -121,6 +149,8 @@ namespace System_reliability
         {
             timer1.Stop();
             buttonPauseContinue.Enabled = false; ;
+
+            dgStates.Rows.Clear();
         }
 
 
