@@ -147,6 +147,9 @@ namespace System_reliability
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            countOfFreeAndMoreFail = 0;
+            currentCountOfExperiments = 0;
+            dgStates.Rows.Clear();
             ClearChart();
             ShowModelingResultsGraphic();
             buttonPauseContinue.Text = "Пауза";
@@ -156,9 +159,7 @@ namespace System_reliability
         private void buttonStop_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            buttonPauseContinue.Enabled = false; ;
-
-            dgStates.Rows.Clear();
+            buttonPauseContinue.Enabled = false;
         }
 
 
