@@ -30,14 +30,14 @@ namespace System_reliability
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series55 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series56 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series57 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series58 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series59 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series60 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonPauseContinue = new System.Windows.Forms.Button();
@@ -47,6 +47,8 @@ namespace System_reliability
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lbRezult = new System.Windows.Forms.Label();
             this.dgStates = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelInfo = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +56,6 @@ namespace System_reliability
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartModeling)).BeginInit();
@@ -122,68 +123,69 @@ namespace System_reliability
             // 
             // chartModeling
             // 
-            chartArea1.AxisX.Interval = 1D;
-            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisX.Minimum = 0D;
-            chartArea1.AxisY.Interval = 1D;
-            chartArea1.AxisY.Maximum = 7D;
-            chartArea1.Name = "ChartArea1";
-            this.chartModeling.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartModeling.Legends.Add(legend1);
+            chartArea10.AxisX.Interval = 1D;
+            chartArea10.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea10.AxisX.Minimum = 0D;
+            chartArea10.AxisY.Interval = 1D;
+            chartArea10.AxisY.Maximum = 7D;
+            chartArea10.Name = "ChartArea1";
+            this.chartModeling.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chartModeling.Legends.Add(legend10);
             this.chartModeling.Location = new System.Drawing.Point(6, 6);
             this.chartModeling.Name = "chartModeling";
-            series1.BorderWidth = 5;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series1.Legend = "Legend1";
-            series1.LegendText = "Элемент 1";
-            series1.Name = "Element1";
-            series2.BorderWidth = 5;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series2.Legend = "Legend1";
-            series2.LegendText = "Элемент 2";
-            series2.Name = "Element2";
-            series2.YValuesPerPoint = 3;
-            series3.BorderWidth = 5;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series3.Legend = "Legend1";
-            series3.LegendText = "Элемент 3";
-            series3.Name = "Element3";
-            series4.BorderWidth = 5;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series4.Legend = "Legend1";
-            series4.LegendText = "Элемент 4";
-            series4.Name = "Element4";
-            series5.BorderWidth = 5;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series5.Color = System.Drawing.Color.MediumAquamarine;
-            series5.Legend = "Legend1";
-            series5.LegendText = "Элемент 5";
-            series5.Name = "Element5";
-            series6.BorderWidth = 5;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series6.Color = System.Drawing.Color.Fuchsia;
-            series6.Legend = "Legend1";
-            series6.LegendText = "Система";
-            series6.Name = "System";
-            this.chartModeling.Series.Add(series1);
-            this.chartModeling.Series.Add(series2);
-            this.chartModeling.Series.Add(series3);
-            this.chartModeling.Series.Add(series4);
-            this.chartModeling.Series.Add(series5);
-            this.chartModeling.Series.Add(series6);
+            series55.BorderWidth = 5;
+            series55.ChartArea = "ChartArea1";
+            series55.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series55.Legend = "Legend1";
+            series55.LegendText = "Элемент 1";
+            series55.Name = "Element1";
+            series56.BorderWidth = 5;
+            series56.ChartArea = "ChartArea1";
+            series56.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series56.Legend = "Legend1";
+            series56.LegendText = "Элемент 2";
+            series56.Name = "Element2";
+            series56.YValuesPerPoint = 3;
+            series57.BorderWidth = 5;
+            series57.ChartArea = "ChartArea1";
+            series57.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series57.Legend = "Legend1";
+            series57.LegendText = "Элемент 3";
+            series57.Name = "Element3";
+            series58.BorderWidth = 5;
+            series58.ChartArea = "ChartArea1";
+            series58.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series58.Legend = "Legend1";
+            series58.LegendText = "Элемент 4";
+            series58.Name = "Element4";
+            series59.BorderWidth = 5;
+            series59.ChartArea = "ChartArea1";
+            series59.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series59.Color = System.Drawing.Color.MediumAquamarine;
+            series59.Legend = "Legend1";
+            series59.LegendText = "Элемент 5";
+            series59.Name = "Element5";
+            series60.BorderWidth = 5;
+            series60.ChartArea = "ChartArea1";
+            series60.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series60.Color = System.Drawing.Color.Fuchsia;
+            series60.Legend = "Legend1";
+            series60.LegendText = "Система";
+            series60.Name = "System";
+            this.chartModeling.Series.Add(series55);
+            this.chartModeling.Series.Add(series56);
+            this.chartModeling.Series.Add(series57);
+            this.chartModeling.Series.Add(series58);
+            this.chartModeling.Series.Add(series59);
+            this.chartModeling.Series.Add(series60);
             this.chartModeling.Size = new System.Drawing.Size(1526, 795);
             this.chartModeling.TabIndex = 0;
             this.chartModeling.Text = "chartModeling";
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.labelInfo);
             this.tabPage2.Controls.Add(this.lbRezult);
             this.tabPage2.Controls.Add(this.dgStates);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -226,9 +228,19 @@ namespace System_reliability
             this.dgStates.Size = new System.Drawing.Size(1874, 716);
             this.dgStates.TabIndex = 0;
             // 
+            // labelInfo
+            // 
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.ForeColor = System.Drawing.Color.Red;
+            this.labelInfo.Location = new System.Drawing.Point(1365, 19);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(61, 17);
+            this.labelInfo.TabIndex = 2;
+            this.labelInfo.Text = "labelInfo";
+            // 
             // Column1
             // 
-            this.Column1.HeaderText = "№ Цикла";
+            this.Column1.HeaderText = "Время, ч";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -309,6 +321,8 @@ namespace System_reliability
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonPauseContinue;
         private System.Windows.Forms.DataGridView dgStates;
+        private System.Windows.Forms.Label lbRezult;
+        private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -316,7 +330,6 @@ namespace System_reliability
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Label lbRezult;
     }
 }
 

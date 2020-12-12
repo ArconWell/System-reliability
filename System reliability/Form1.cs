@@ -13,7 +13,7 @@ namespace System_reliability
         }
 
         bool[] currentSeriesStates;//текущие состояния элементов
-        const double timeUnit = 0.5;//в секундах
+        const double timeUnit = 0.5;//единица времени. Влияет на скорость таймер. Кореллируется секунды-часы
         double timePassed = 0;//общее прошедшее время
         double[] timeSinceLastFailure;//время, прошедшее с момента последнего отказа у каждого отдельного элемента
         double[] k;
@@ -139,6 +139,7 @@ namespace System_reliability
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            labelInfo.Text = $"Каждые {timeUnit} секунды моделирования равны {timeUnit} часам реального времени.";
             timer1.Interval = (int)(timeUnit * 1000);
             timer1.Tick += new EventHandler(UpdateSeries);
             InitializeSeries();
