@@ -105,7 +105,7 @@ namespace System_reliability
         private void OutputOneState(bool[] currentState, int rowIndex)
         {
             dgStates.Rows.Add();
-            dgStates[0, rowIndex - 1].Value = rowIndex;
+            dgStates[0, rowIndex - 1].Value = timePassed;
             for (int j = 1; j <= currentState.Length; j++)
             {
                 dgStates[j, rowIndex - 1].Value = currentState[j - 1];
